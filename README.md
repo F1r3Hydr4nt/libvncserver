@@ -86,6 +86,30 @@ Crypto support in LibVNCClient and LibVNCServer can use different backends:
    * Supports _only VNC authentication_ in LibVNCClient and LibVNCServer.
    * Supports WebSockets in LibVNCServer.
 
+
+https://kontext.tech/column/c_and_cplusplus/443/cmake-build-error-could-not-find-openssl-on-windows-10
+TLDR: vcpkg install openssl zlib libjpeg-turbo libpng
+
+    The package openssl is compatible with built-in CMake targets:
+
+        find_package(OpenSSL REQUIRED)
+        target_link_libraries(main PRIVATE OpenSSL::SSL OpenSSL::Crypto)
+    The package libjpeg-turbo is compatible with built-in CMake targets:
+
+        find_package(JPEG REQUIRED)
+        target_link_libraries(main PRIVATE ${JPEG_LIBRARIES})
+        target_include_directories(main PRIVATE ${JPEG_INCLUDE_DIR})
+
+    The package zlib is compatible with built-in CMake targets:
+
+        find_package(ZLIB REQUIRED)
+        target_link_libraries(main PRIVATE ZLIB::ZLIB)
+
+    The package libpng:x86-windows provides CMake targets:
+
+        find_package(libpng CONFIG REQUIRED)
+        target_link_libraries(main PRIVATE png)
+
 Transport Layer Security support in LibVNCClient and LibVNCServer can use:
 
  * OpenSSL (`-DWITH_OPENSSL=ON -DWITH_GNUTLS=OFF`)

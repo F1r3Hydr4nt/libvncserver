@@ -56,3 +56,4 @@ CMakeCache.txt
 .ccls-cache
 .log
 compile_commands.json
+.vs/
