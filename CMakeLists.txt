@@ -37,6 +37,14 @@ endif(CMAKE_GENERATOR MATCHES "Unix Makefiles|Ninja")
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/libvncserver ${CMAKE_CURRENT_SOURCE_DIR}/common)
 
+set(OPENSSL_ROOT_DIR "C:/Users/$USERNAME/source/repos/vcpkg/packages/openssl_x86-windows")
+set(ZLIB_INCLUDE_DIR "C:/Users/$USERNAME/source/repos/vcpkg/packages/zlib_x86-windows")
+set(ZLIB_LIBRARY "C:/Users/$USERNAME/source/repos/vcpkg/packages/zlib_x86-windows/lib/zlib.lib")
+set(JPEG_INCLUDE_DIR "C:/Users/$USERNAME/source/repos/vcpkg/packages/libjpeg-turbo_x86-windows")
+set(JPEG_LIBRARY "C:/Users/$USERNAME/source/repos/vcpkg/packages/libjpeg-turbo_x86-windows/lib/jpeg.lib")#jpeg.lib
+set(PNG_PNG_INCLUDE_DIR "C:/Users/$USERNAME/source/repos/vcpkg/packages/libpng_x86-windows")
+set(PNG_LIBRARY "C:/Users/$USERNAME/source/repos/vcpkg/packages/libpng_x86-windows/lib/libpng16.lib")
+
 # all the build configuration switches
 option(LIBVNCSERVER_INSTALL "Generate installation target" ON)
 option(BUILD_SHARED_LIBS "Build shared libraries" ${UNIX})

@@ -110,6 +110,17 @@ TLDR: vcpkg install openssl zlib libjpeg-turbo libpng
         find_package(libpng CONFIG REQUIRED)
         target_link_libraries(main PRIVATE png)
 
+1> [CMake] -- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR) 
+
+To fix above:
+vcpkg list --triplet x64-windows
+https://stackoverflow.com/questions/55496611/cmake-cannot-find-libraries-installed-with-vcpkg
+https://stackoverflow.com/questions/46530617/cmake-set-zlib-path
+It's complaining about the library not being libjpeg-turbo, oh well:
+    1> [CMake] CMake Warning at C:\Users\$USERNAME\source\repos\libvncserver\CMakeLists.txt:118 (message):
+    1> [CMake]   *** The libjpeg library you are building against is not libjpeg-turbo.
+
+
 Transport Layer Security support in LibVNCClient and LibVNCServer can use:
 
  * OpenSSL (`-DWITH_OPENSSL=ON -DWITH_GNUTLS=OFF`)
